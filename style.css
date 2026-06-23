@@ -1,0 +1,226 @@
+/* Variables para mantener orden y consistencia */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --text-color: #1d1d1f;
+    --radius: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor completo con un degradado de fondo inicial suave */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    transition: background 0.8s ease; /* Transición suave cuando cambie el fondo */
+}
+
+/* La Tarjeta de Vidrio (Glassmorphism Core) */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Soporte para Safari */
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    text-align: center;
+}
+
+.card-header h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 32px;
+}
+
+/* Grid para las muestras de color */
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* Tarjetas individuales de color dentro del vidrio */
+.color-swatch {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-swatch:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.color-box {
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: background 0.3s ease;
+}
+
+.color-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+/* Botón interactivo */
+.btn-primary {
+    background: var(--text-color);
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background: #333333;
+    transform: scale(1.02);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+/* Estilos para el nuevo selector */
+.selector-container {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.selector-container label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.selector-container select {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--glass-border);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.selector-container select:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+/* Estilos para el nuevo selector de cantidad */
+.quantity-container {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-container span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* El contenedor que agrupa los botones */
+.count-toggle {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--glass-border);
+    padding: 4px;
+    border-radius: 12px;
+    display: flex;
+    gap: 2px;
+}
+
+/* Cada botón individual de número */
+.count-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.count-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* El botón que está seleccionado actualmente */
+.count-btn.active {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Contenedor de la muestra de color (ajuste para posicionar el candado dentro) */
+.color-swatch {
+    position: relative; /* Permite posicionar el candado de forma absoluta dentro */
+}
+
+/* Botón del Candado */
+.lock-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--glass-border);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    z-index: 10; /* Asegura que esté por encima del cuadro de color */
+}
+
+.lock-btn:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+}
+
+/* Estado cuando el candado está bloqueado */
+.lock-btn.locked {
+    background: var(--text-color);
+    color: #ffffff;
+    border-color: var(--text-color);
+}

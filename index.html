@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <section class="glass-card">
+            
+        <header class="card-header">
+                <h1>Color Glassmorphism</h1>
+                <p>Presiona el botón o la barra espaciadora para crear magia</p>
+                
+                <div class="selector-container">
+                    <label for="harmony-select">Regla de Armonía:</label>
+                    <select id="harmony-select">
+                        <option value="random">Aleatorio Puro</option>
+                        <option value="analogous">Análogos (Vecinos)</option>
+                        <option value="complementary">Complementarios (Opuestos)</option>
+                        <option value="monochromatic">Monocromático</option>
+                    </select>
+                </div>
+
+                <div class="quantity-container">
+                    <span>Cantidad de colores:</span>
+                    <div class="count-toggle">
+                        <button class="count-btn" data-count="2">2</button>
+                        <button class="count-btn" data-count="3">3</button>
+                        <button class="count-btn" data-count="4" class="active">4</button>
+                        <button class="count-btn" data-count="5">5</button>
+                    </div>
+                </div>
+            </header>
+
+            <div id="palette-container" class="palette-grid"></div>
+
+            <footer class="card-actions">
+                <button id="generate-btn" class="btn-primary">Generar Paleta</button>
+            </footer>
+        </section>
+
+    </main>
+
+   <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
